@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, TextInput } from "react-native";
-import React from "react";
+import React, { useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Colors from "../constants/Colors";
@@ -31,22 +31,26 @@ const SearchBar = () => (
 );
 
 const CustomHeader = () => {
+  // const bottomSheetRef = useRef<BottomSheetModal>(null);
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <TouchableOpacity>
-          <Image
-            style={styles.bike}
-            source={require("../assets/images/bike.png")}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.titleContainer}>
-          <Text style={styles.title}>Delivery . Now</Text>
-          <View style={styles.locationName}>
-            <Text style={styles.subtitle}>London</Text>
-            <Ionicons name="chevron-down" size={20} color={Colors.primary} />
-          </View>
-        </TouchableOpacity>
+        <View style={styles.titleContainer}>
+          <TouchableOpacity>
+            <Image
+              style={styles.bike}
+              source={require("../assets/images/bike.png")}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.title}>Delivery . Now</Text>
+            <View style={styles.locationName}>
+              <Text style={styles.subtitle}>London</Text>
+              <Ionicons name="chevron-down" size={20} color={Colors.primary} />
+            </View>
+          </TouchableOpacity>
+        </View>
         <TouchableOpacity style={styles.profileButton}>
           <Ionicons name="person-outline" size={20} color={Colors.primary} />
         </TouchableOpacity>
@@ -75,7 +79,9 @@ const styles = StyleSheet.create({
     height: 30,
   },
   titleContainer: {
-    flex: 1,
+    flexDirection: "row",
+    gap: 20,
+    alignItems: "center",
   },
   title: {
     fontSize: 14,
