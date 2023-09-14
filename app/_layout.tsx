@@ -51,7 +51,7 @@ export default function RootLayoutNav() {
           name="(modal)/location-search"
           options={{
             presentation: "fullScreenModal",
-            headerTitle: "Search Location",
+            headerTitle: "Select Location",
             headerLeft: () => (
               <TouchableOpacity
                 onPress={() => {
