@@ -53,7 +53,7 @@ const LocationSearch = () => {
           },
         }}
       />
-      <MapView style={styles.map} region={location} showsUserLocation={true} />
+      <MapView style={styles.map} showsUserLocation={true} region={location} />
       <View style={styles.absoluteBox}>
         <TouchableOpacity
           style={styles.button}
