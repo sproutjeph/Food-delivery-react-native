@@ -2,6 +2,7 @@ import { View, Text, ScrollView, StyleSheet, SafeAreaView } from "react-native";
 import React from "react";
 import Categories from "../components/Categories";
 import Colors from "../constants/Colors";
+import Restaurants from "../components/Restaurants";
 
 const Page = () => {
   return (
@@ -9,6 +10,7 @@ const Page = () => {
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
         <Categories />
         <Text style={styles.header}>Top picks in your neighbourhood</Text>
+        <Restaurants />
         <Text style={styles.header}>Offers near you</Text>
       </ScrollView>
     </SafeAreaView>
