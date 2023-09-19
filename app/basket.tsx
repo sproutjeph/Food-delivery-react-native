@@ -6,11 +6,11 @@ import {
   FlatList,
 } from "react-native";
 import React, { useState } from "react";
-import Colors from "../../constants/Colors";
-import useBasketStore from "../store/basketStore";
+import Colors from "../constants/Colors";
+import useBasketStore from "./store/basketStore";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import SwipeableRow from "../../components/SwipeableRow";
+import SwipeableRow from "../components/SwipeableRow";
 import ConfettiCannon from "react-native-confetti-cannon";
 
 const basket = () => {
