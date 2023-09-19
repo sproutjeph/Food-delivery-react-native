@@ -20,6 +20,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
+import useBasketStore from "./store/basketStore";
 
 const details = () => {
   const navigation = useNavigation();
@@ -36,7 +37,7 @@ const details = () => {
     index,
   }));
 
-  const { items, total } = { items: "", total: "" } as any;
+  const { items, total } = useBasketStore();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -188,7 +189,7 @@ const details = () => {
       {items > 0 && (
         <View style={styles.footer}>
           <SafeAreaView edges={["bottom"]} style={{ backgroundColor: "#fff" }}>
-            <Link href="/" asChild>
+            <Link href="/basket" asChild>
               <TouchableOpacity style={styles.fullButton}>
                 <Text style={styles.basket}>{items}</Text>
                 <Text style={styles.footerText}>View Basket</Text>

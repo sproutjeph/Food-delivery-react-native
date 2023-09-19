@@ -10,13 +10,20 @@ import Animated, {
   FadeInLeft,
   FadeInUp,
 } from "react-native-reanimated";
+import * as Haptics from "expo-haptics";
+import useBasketStore from "../store/basketStore";
 
 const Dish = () => {
   const { id } = useLocalSearchParams();
   const item = getDishById(Number(id))!;
   const router = useRouter();
+  const { addProduct } = useBasketStore();
 
-  const addToCart = () => {};
+  const addToCart = () => {
+    addProduct(item);
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    router.back();
+  };
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: "#fff" }}
